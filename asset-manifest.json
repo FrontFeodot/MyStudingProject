@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/FrontFeodot/MyStudingProject/static/css/main.98b47fd0.css",
-    "main.js": "/FrontFeodot/MyStudingProject/static/js/main.48a0d64d.js",
+    "main.js": "/FrontFeodot/MyStudingProject/static/js/main.9a042175.js",
     "static/js/797.46d3fa89.chunk.js": "/FrontFeodot/MyStudingProject/static/js/797.46d3fa89.chunk.js",
     "static/css/919.f031b173.chunk.css": "/FrontFeodot/MyStudingProject/static/css/919.f031b173.chunk.css",
     "static/js/919.affa8a8b.chunk.js": "/FrontFeodot/MyStudingProject/static/js/919.affa8a8b.chunk.js",
     "static/media/preloader.svg": "/FrontFeodot/MyStudingProject/static/media/preloader.3778619a29b96e43e4b358be1283bab0.svg",
     "index.html": "/FrontFeodot/MyStudingProject/index.html",
     "main.98b47fd0.css.map": "/FrontFeodot/MyStudingProject/static/css/main.98b47fd0.css.map",
-    "main.48a0d64d.js.map": "/FrontFeodot/MyStudingProject/static/js/main.48a0d64d.js.map",
+    "main.9a042175.js.map": "/FrontFeodot/MyStudingProject/static/js/main.9a042175.js.map",
     "797.46d3fa89.chunk.js.map": "/FrontFeodot/MyStudingProject/static/js/797.46d3fa89.chunk.js.map",
     "919.f031b173.chunk.css.map": "/FrontFeodot/MyStudingProject/static/css/919.f031b173.chunk.css.map",
     "919.affa8a8b.chunk.js.map": "/FrontFeodot/MyStudingProject/static/js/919.affa8a8b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.98b47fd0.css",
-    "static/js/main.48a0d64d.js"
+    "static/js/main.9a042175.js"
   ]
 }
