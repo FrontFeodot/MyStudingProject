@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/MyStudingProject/static/css/main.98b47fd0.css",
-    "main.js": "/MyStudingProject/static/js/main.bbccf3da.js",
-    "static/js/797.e1187856.chunk.js": "/MyStudingProject/static/js/797.e1187856.chunk.js",
-    "static/css/919.f031b173.chunk.css": "/MyStudingProject/static/css/919.f031b173.chunk.css",
-    "static/js/919.287e3853.chunk.js": "/MyStudingProject/static/js/919.287e3853.chunk.js",
-    "static/media/preloader.svg": "/MyStudingProject/static/media/preloader.3778619a29b96e43e4b358be1283bab0.svg",
-    "index.html": "/MyStudingProject/index.html",
-    "main.98b47fd0.css.map": "/MyStudingProject/static/css/main.98b47fd0.css.map",
-    "main.bbccf3da.js.map": "/MyStudingProject/static/js/main.bbccf3da.js.map",
-    "797.e1187856.chunk.js.map": "/MyStudingProject/static/js/797.e1187856.chunk.js.map",
-    "919.f031b173.chunk.css.map": "/MyStudingProject/static/css/919.f031b173.chunk.css.map",
-    "919.287e3853.chunk.js.map": "/MyStudingProject/static/js/919.287e3853.chunk.js.map"
+    "main.css": "/FrontFeodot/MyStudingProject/static/css/main.98b47fd0.css",
+    "main.js": "/FrontFeodot/MyStudingProject/static/js/main.bf66f8fe.js",
+    "static/js/797.e1187856.chunk.js": "/FrontFeodot/MyStudingProject/static/js/797.e1187856.chunk.js",
+    "static/css/919.f031b173.chunk.css": "/FrontFeodot/MyStudingProject/static/css/919.f031b173.chunk.css",
+    "static/js/919.287e3853.chunk.js": "/FrontFeodot/MyStudingProject/static/js/919.287e3853.chunk.js",
+    "static/media/preloader.svg": "/FrontFeodot/MyStudingProject/static/media/preloader.3778619a29b96e43e4b358be1283bab0.svg",
+    "index.html": "/FrontFeodot/MyStudingProject/index.html",
+    "main.98b47fd0.css.map": "/FrontFeodot/MyStudingProject/static/css/main.98b47fd0.css.map",
+    "main.bf66f8fe.js.map": "/FrontFeodot/MyStudingProject/static/js/main.bf66f8fe.js.map",
+    "797.e1187856.chunk.js.map": "/FrontFeodot/MyStudingProject/static/js/797.e1187856.chunk.js.map",
+    "919.f031b173.chunk.css.map": "/FrontFeodot/MyStudingProject/static/css/919.f031b173.chunk.css.map",
+    "919.287e3853.chunk.js.map": "/FrontFeodot/MyStudingProject/static/js/919.287e3853.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.98b47fd0.css",
-    "static/js/main.bbccf3da.js"
+    "static/js/main.bf66f8fe.js"
   ]
 }
