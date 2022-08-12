@@ -1,0 +1,25 @@
+.nav {
+  grid-area: n;
+  background-color: rgb(255, 121, 121);
+  padding: 20px;
+  text-align: center;
+}
+.item a {
+  color: white;
+  text-decoration: none;
+}
+.item a.active {
+  color: gold;
+}
+.friends {
+  font-size: 1.5em;
+  color: white;
+  text-align: bottom;
+}
+/* .text {
+  padding: 20px;
+} */
+.img {
+  display: inline;
+  width: 40px;
+}

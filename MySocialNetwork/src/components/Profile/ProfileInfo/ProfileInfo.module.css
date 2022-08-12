@@ -1,0 +1,14 @@
+.profile__img {
+  width: 1000px;
+}
+.descriptionBlock {
+  padding: 10px;
+}
+.descriptionBlock div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.ava__img {
+  width: 300px;
+  height: 300px;
+}

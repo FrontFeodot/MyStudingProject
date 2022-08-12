@@ -1,0 +1,30 @@
+.formControl.error textarea {
+  border: 2px red solid;
+}
+.error span {
+  color: red;
+}
+.error input {
+  border: 2px red solid;
+}
+.error textarea {
+  border: 2px red solid;
+}
+.invalidLogin {
+  color: red;
+  font-weight: bold;
+}
+.messageForm {
+  overflow: auto;
+  resize: none;
+  margin-top: 10em;
+  width: 80em;
+  height: 10em;
+}
+.postForm {
+  overflow: auto;
+  resize: none;
+  margin-top: 1em;
+  width: 20em;
+  height: 5em;
+}
