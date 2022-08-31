@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MyStudingProject/static/css/main.876e8168.css",
-    "main.js": "/MyStudingProject/static/js/main.32474dee.js",
+    "main.js": "/MyStudingProject/static/js/main.c7186b1a.js",
     "static/js/797.04a008f0.chunk.js": "/MyStudingProject/static/js/797.04a008f0.chunk.js",
     "static/css/919.f031b173.chunk.css": "/MyStudingProject/static/css/919.f031b173.chunk.css",
     "static/js/919.40708cb7.chunk.js": "/MyStudingProject/static/js/919.40708cb7.chunk.js",
@@ -38,7 +38,7 @@
     "static/media/preloader.svg": "/MyStudingProject/static/media/preloader.3778619a29b96e43e4b358be1283bab0.svg",
     "index.html": "/MyStudingProject/index.html",
     "main.876e8168.css.map": "/MyStudingProject/static/css/main.876e8168.css.map",
-    "main.32474dee.js.map": "/MyStudingProject/static/js/main.32474dee.js.map",
+    "main.c7186b1a.js.map": "/MyStudingProject/static/js/main.c7186b1a.js.map",
     "797.04a008f0.chunk.js.map": "/MyStudingProject/static/js/797.04a008f0.chunk.js.map",
     "919.f031b173.chunk.css.map": "/MyStudingProject/static/css/919.f031b173.chunk.css.map",
     "919.40708cb7.chunk.js.map": "/MyStudingProject/static/js/919.40708cb7.chunk.js.map",
@@ -46,6 +46,6 @@
   },
   "entrypoints": [
     "static/css/main.876e8168.css",
-    "static/js/main.32474dee.js"
+    "static/js/main.c7186b1a.js"
   ]
 }
