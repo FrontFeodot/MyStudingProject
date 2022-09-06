@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.css": "/MyStudingProject/static/css/main.62c10bfc.css",
-    "main.js": "/MyStudingProject/static/js/main.ec91e405.js",
+    "main.css": "/MyStudingProject/static/css/main.0fd39617.css",
+    "main.js": "/MyStudingProject/static/js/main.1c7364a4.js",
     "static/js/797.74984449.chunk.js": "/MyStudingProject/static/js/797.74984449.chunk.js",
+    "static/css/414.69b09dac.chunk.css": "/MyStudingProject/static/css/414.69b09dac.chunk.css",
+    "static/js/414.7cc5720b.chunk.js": "/MyStudingProject/static/js/414.7cc5720b.chunk.js",
     "static/js/231.e8d2ccee.chunk.js": "/MyStudingProject/static/js/231.e8d2ccee.chunk.js",
     "static/media/primeicons.svg": "/MyStudingProject/static/media/primeicons.c6e2053303524e39530c.svg",
     "static/media/primeicons.eot": "/MyStudingProject/static/media/primeicons.7fc4d8e224d1ff1b9c62.eot",
@@ -35,13 +37,15 @@
     "static/media/roboto-latin-900.woff2": "/MyStudingProject/static/media/roboto-latin-900.870c8c1486f76054301a.woff2",
     "static/media/preloader.svg": "/MyStudingProject/static/media/preloader.3778619a29b96e43e4b358be1283bab0.svg",
     "index.html": "/MyStudingProject/index.html",
-    "main.62c10bfc.css.map": "/MyStudingProject/static/css/main.62c10bfc.css.map",
-    "main.ec91e405.js.map": "/MyStudingProject/static/js/main.ec91e405.js.map",
+    "main.0fd39617.css.map": "/MyStudingProject/static/css/main.0fd39617.css.map",
+    "main.1c7364a4.js.map": "/MyStudingProject/static/js/main.1c7364a4.js.map",
     "797.74984449.chunk.js.map": "/MyStudingProject/static/js/797.74984449.chunk.js.map",
+    "414.69b09dac.chunk.css.map": "/MyStudingProject/static/css/414.69b09dac.chunk.css.map",
+    "414.7cc5720b.chunk.js.map": "/MyStudingProject/static/js/414.7cc5720b.chunk.js.map",
     "231.e8d2ccee.chunk.js.map": "/MyStudingProject/static/js/231.e8d2ccee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.62c10bfc.css",
-    "static/js/main.ec91e405.js"
+    "static/css/main.0fd39617.css",
+    "static/js/main.1c7364a4.js"
   ]
 }

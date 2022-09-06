@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/414.69b09dac.chunk.css","mappings":"AAAA,sBACE,WAAY,CACZ,eACF,CACA,sBAEE,aAAc,CACd,WAAY,CAFZ,UAGF","sources":["components/Chat/chat.module.css"],"sourcesContent":[".messages {\r\n  height: 50em;\r\n  overflow-y: auto;\r\n}\r\n.textarea {\r\n  width: 100%;\r\n  overflow: auto;\r\n  resize: none;\r\n}\r\n"],"names":[],"sourceRoot":""}
