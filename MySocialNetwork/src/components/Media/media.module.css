@@ -1,0 +1,20 @@
+.content {
+  text-align: center;
+}
+.prevPageButton {
+  padding-left: 2em;
+}
+
+.nextPageButton {
+  padding-right: 2em;
+  float: right;
+  margin-bottom: 2em;
+}
+.upButton {
+  float: right;
+  margin-right: 2em;
+}
+.videoBlock {
+  display: inline-block;
+  width: 50%;
+}

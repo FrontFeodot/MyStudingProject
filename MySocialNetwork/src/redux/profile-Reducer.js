@@ -5,12 +5,22 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
 const SET_STATUS = 'SET_STATUS';
 const DELETE_POST = 'DELETE_POST';
+const ADD_PHOTO_SUCCESS = 'ADD_PHOTO_SUCCESS';
 
 let initialState = {
   posts: [
-    { id: 1, message: 'Привет, это мой первый пост', likesCount: '5' },
-    { id: 2, message: 'А это второй', likesCount: '25' },
-    { id: 3, message: 'Даб даааа яяя', likesCount: '1005' },
+    { id: 1, message: 'Hi! This is my first post!', likesCount: '5' },
+    {
+      id: 2,
+      message: 'If you see this message - you are the best!',
+      likesCount: '5000',
+    },
+    {
+      id: 3,
+      message:
+        'To my regret, all added posts don`t save, because API not ready for this',
+      likesCount: '1',
+    },
   ],
   profile: null,
   userStatus: '',
@@ -48,6 +58,9 @@ const profileReducer = (state = initialState, action) => {
     case SET_STATUS: {
       return { ...state, userStatus: action.userStatus };
     }
+    case ADD_PHOTO_SUCCESS: {
+      return { ...state, profile: { ...state.profile, photos: action.photos } };
+    }
 
     default:
       return state;
@@ -70,6 +83,12 @@ export const setUserStatus = (userStatus) => ({
   type: SET_STATUS,
   userStatus,
 });
+
+export const addPhotoSuccess = (photos) => ({
+  type: ADD_PHOTO_SUCCESS,
+  photos,
+});
+
 export const getProfile = (userId) => async (dispatch) => {
   let response = await profileAPI.getProfile(userId);
   dispatch(setUserProfile(response));
@@ -91,8 +110,12 @@ export const updateNewPostTextCreator = (text) => ({
   newText: text,
 });
 
-export const addPhoto = async (image) => {
-  let response = await profileAPI.addPhoto(image);
+export const addPhoto = (file) => async (dispatch) => {
+  let response = await profileAPI.addPhoto(file);
+  if (response.data.resultCode === 0) {
+    dispatch(addPhotoSuccess(response.data.data.photos));
+  }
+
   return response;
 };
 

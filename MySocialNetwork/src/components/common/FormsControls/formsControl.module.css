@@ -14,12 +14,14 @@
   color: red;
   font-weight: bold;
 }
-.messageForm {
+.messageFormArea {
   overflow: auto;
   resize: none;
-  margin-top: 10em;
   width: 80em;
-  height: 10em;
+  height: 15em;
+}
+.messageForm {
+  margin-top: 10em;
 }
 .postForm {
   overflow: auto;
@@ -27,4 +29,27 @@
   margin-top: 1em;
   width: 20em;
   height: 5em;
+}
+.captcha {
+  width: 200px;
+  height: 100px;
+}
+.error {
+  color: red;
+}
+.email {
+  margin-left: 3em;
+}
+.password {
+  margin-left: 1.1em;
+}
+.submitButton {
+  margin-top: 1em;
+}
+.login {
+  text-align: center;
+
+  height: 40%;
+
+  border: solid 5px #bb7650;
 }

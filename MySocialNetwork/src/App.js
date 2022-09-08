@@ -1,27 +1,34 @@
 import React, { Suspense, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 
-import HeaderContainer from './components/Header/HeaderContainer';
-import Music from './components/Music/Music';
-import Navbar from './components/Navbar/Navbar';
-import News from './components/News/News';
-import ProfileContainer from './components/Profile/ProfileContainer';
-import Settings from './components/Settings/Settings';
-import UsersContainer from './components/Users/UsersContainer';
+import 'primeicons/primeicons.css';
+import 'primereact/resources/primereact.min.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import { connect } from 'react-redux';
-import { initializeApp } from './redux/app-reducer';
 import Preloader from './components/common/Preloader/Preloader';
+import HeaderContainer from './components/Header/HeaderContainer';
+import Media from './components/Media/Media';
+import Navbar from './components/Navbar/Navbar';
+import ProfileContainer from './components/Profile/ProfileContainer';
+import SettingsContainer from './components/Settings/SettingsContainer';
+import UsersContainer from './components/Users/UsersContainer';
+import { initializeApp } from './redux/app-reducer';
 
 const Login = React.lazy(() => import('./components/Login/Login'));
-const DialogsContainer = React.lazy(() =>
-  import('./components/Dialogs/Dialogs-Container')
-);
+const ChatPage = React.lazy(() => import('./components/Chat/ChatPage'));
 
-const App = ({ initializeApp, initialized }) => {
+const App = ({ initializeApp, initialized, isAuth }) => {
   useEffect(() => {
     initializeApp();
   }, [initializeApp]);
+
+  window.addEventListener(
+    'unhandledrejection',
+    function (promiseRejectionEvent) {
+      this.window.HTMLBodyElement = <div>ERROR</div>;
+    }
+  );
 
   if (!initialized) {
     return <Preloader />;
@@ -42,12 +49,13 @@ const App = ({ initializeApp, initialized }) => {
           <Routes>
             <Route path='/profile/:userId' element={<ProfileContainer />} />
             <Route path='/profile/*' element={<ProfileContainer />} />
-            <Route path='/dialogs/*' element={<DialogsContainer />} />
             <Route path='/users' element={<UsersContainer />} />
-            <Route path='/news' element={<News />} />
-            <Route path='/music' element={<Music />} />
-            <Route path='/settings' element={<Settings />} />
+            <Route path='/Media' element={<Media isAuth={isAuth} />} />
+            <Route path='/settings' element={<SettingsContainer />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/chat' element={<ChatPage />} />
+            <Route path='/' element={<Navigate to='/profile' />} />
+            <Route path='*' element={<div>404 NOT FOUND</div>} />
           </Routes>
         </Suspense>
       </div>
@@ -57,5 +65,6 @@ const App = ({ initializeApp, initialized }) => {
 
 const mapStateToProps = (state) => ({
   initialized: state.app.initialized,
+  isAuth: state.auth.isAuth,
 });
 export default connect(mapStateToProps, { initializeApp })(App);

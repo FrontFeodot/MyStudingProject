@@ -9,7 +9,7 @@ import {
   toggleIsFetching,
   toggleFollowingProgress,
   requestUsers,
-} from '../../redux/users-Reducer';
+} from '../../redux/users-reducer';
 import Users from './Users';
 
 import Preloader from '../common/Preloader/Preloader';
@@ -50,6 +50,7 @@ const UsersContainer = ({ currentPage, pageSize, getUsers, ...props }) => {
         follow={props.follow}
         unfollow={props.unfollow}
         followingInProgress={props.followingInProgress}
+        isAuth={props.isAuth}
       />
     </>
   );
@@ -63,6 +64,7 @@ let mapStateToProps = (state) => {
     currentPage: getCurrentPage(state),
     isFetching: getIsFetching(state),
     followingInProgress: getFollowingInProgress(state),
+    isAuth: state.auth.isAuth,
   };
 };
 

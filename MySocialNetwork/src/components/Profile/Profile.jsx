@@ -7,14 +7,16 @@ const Profile = (props) => {
     <div>
       <ProfileInfo
         profile={props.profile}
-        dataAvailability={props.dataAvailability}
         userStatus={props.userStatus}
         updateUserStatus={props.updateUserStatus}
         authorizedId={props.authorizedId}
         params={props.params}
         addPhoto={props.addPhoto}
       />
-      <MyPostsContainer params={props.params} />
+      <MyPostsContainer
+        params={props.params}
+        authorizedId={props.authorizedId}
+      />
     </div>
   );
 };

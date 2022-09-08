@@ -4,6 +4,8 @@ import * as Yup from 'yup';
 import styleForm from '../../common/FormsControls/formsControl.module.css';
 import style from './MyPosts.module.css';
 import Post from './Post/Post';
+import { InputTextarea } from 'primereact/inputtextarea';
+import { Button } from 'primereact/button';
 
 const PostForm = (props) => {
   const formik = useFormik({
@@ -28,7 +30,7 @@ const PostForm = (props) => {
             styleForm.error
           }
         >
-          <textarea
+          <InputTextarea
             id='newPostText'
             name='newPostText'
             className={styleForm.postForm}
@@ -41,8 +43,7 @@ const PostForm = (props) => {
             <span>{formik.errors.newPostText}</span>
           )}
         </div>
-
-        <button type='submit'>Add post</button>
+        <Button label='Add post' className='p-button-success' type='submit' />
       </Form>
     </Formik>
   );
@@ -55,10 +56,11 @@ const MyPosts = React.memo((props) => {
       message={post.message}
       key={post.id}
       likesCount={post.likesCount}
+      profile={props.profile}
     />
   ));
 
-  return (
+  return props.authorizedId === props.params.userId || !props.params.userId ? (
     <div className={style.postsBlock}>
       <h3>My posts</h3>
       {!props.params.userId ? (
@@ -66,11 +68,9 @@ const MyPosts = React.memo((props) => {
           <PostForm addPost={props.addPost} />
         </div>
       ) : null}
-      <div className={style.posts}>
-        {postsElement}
-        Main content
-      </div>
+      <div className={style.posts}>{postsElement}</div>
     </div>
-  );
+  ) : null;
 });
+
 export default MyPosts;

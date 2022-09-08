@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-
+import { Button } from 'primereact/button';
 import style from './paginator.module.css';
+import 'primeicons/primeicons.css';
 
 const UsersPaginator = ({
   totalUsersCount,
@@ -24,42 +25,63 @@ const UsersPaginator = ({
   let rightPortionPageNumber = portionNumber * portionSize;
 
   return (
-    <div>
+    <div className={style.paginator}>
       {portionNumber > 1 && (
-        <button
-          onClick={() => {
-            setPortionNumber(portionNumber - 1);
-          }}
-        >
-          Prev
-        </button>
+        <>
+          <Button
+            label='First'
+            onClick={() => {
+              setPortionNumber(1);
+            }}
+          />
+          <Button
+            label='Prev'
+            onClick={() => {
+              setPortionNumber(portionNumber - 1);
+            }}
+          />
+        </>
       )}
+      <span className={style.pages}>
+        {pages
 
-      {pages
-        .filter(
-          (p) => p >= leftPortionPageNumber && p <= rightPortionPageNumber
-        )
-        .map((p, key) => {
-          return (
-            <span
-              key={key}
-              className={currentPage === p ? style.selectedPage : undefined}
-              onClick={(e) => {
-                onPageChanged(p);
-              }}
-            >
-              {` ${p} `}
-            </span>
-          );
-        })}
+          .filter(
+            (p) => p >= leftPortionPageNumber && p <= rightPortionPageNumber
+          )
+          .map((p, key) => {
+            return (
+              <span
+                key={key}
+                className={
+                  currentPage === p
+                    ? style.selectedPage
+                    : undefined + ' ' + style.onFocus
+                }
+                onClick={(e) => {
+                  onPageChanged(p);
+                }}
+              >
+                {` ${p} `}
+              </span>
+            );
+          })}
+      </span>
       {portionCount > portionNumber && (
-        <button
-          onClick={() => {
-            setPortionNumber(portionNumber + 1);
-          }}
-        >
-          Prev
-        </button>
+        <>
+          <Button
+            label='Next'
+            onClick={() => {
+              setPortionNumber(portionNumber + 1);
+            }}
+          />
+
+          <Button
+            label='Last'
+            onClick={() => {
+              setPortionNumber(portionCount);
+            }}
+          />
+        </>
       )}
     </div>
   );

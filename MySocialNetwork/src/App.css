@@ -1,15 +1,18 @@
 .app-wrapper {
+  height: 98vh;
+
   display: grid;
 
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
-  /* grid-gap: 10px; */
+
   grid-template-areas:
     'h h'
     'n c';
+  font-family: Roboto;
 }
 
 .app-wrapper-content {
   grid-area: c;
-  background-color: rgb(146, 191, 255);
+  background-color: #f8efea;
 }

@@ -17,12 +17,12 @@ function Navbar(props) {
       </div>
       <div className={style.item}>
         <NavLink
-          to='/Dialogs'
+          to='/chat'
           className={(navData) =>
             navData.isActive ? style.active : style.item
           }
         >
-          Messages
+          Chat
         </NavLink>
       </div>
       <div className={style.item}>
@@ -37,12 +37,12 @@ function Navbar(props) {
       </div>
       <div className={style.item}>
         <NavLink
-          to='/Music'
+          to='/media'
           className={(navData) =>
             navData.isActive ? style.active : style.item
           }
         >
-          Music
+          Media
         </NavLink>
       </div>
       <div className={style.item}>

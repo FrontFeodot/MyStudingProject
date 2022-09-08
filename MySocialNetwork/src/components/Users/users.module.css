@@ -14,3 +14,14 @@
   background-size: cover;
   background: rgba(40, 40, 40, 0.505);
 }
+.userBlock {
+  text-decoration: none;
+  padding: 10px;
+}
+.userName {
+  text-decoration: none;
+}
+.upButton {
+  float: right;
+  margin-right: 2em;
+}

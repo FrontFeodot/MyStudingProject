@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import {
   addPostCreator,
   updateNewPostTextCreator,
-} from '../../../redux/profile-Reducer';
+} from '../../../redux/profile-reducer';
 import MyPosts from './MyPosts';
 
 const mapStateToProps = (state) => {
@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
     posts: state.profilePage.posts,
     newPostText: state.profilePage.newPostText,
     authorizedId: state.auth.userId,
+    profile: state.profilePage.profile,
   };
 };
 

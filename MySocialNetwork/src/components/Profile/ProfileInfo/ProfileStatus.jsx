@@ -1,3 +1,4 @@
+import style from './ProfileInfo.module.css';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -25,23 +26,35 @@ const ProfileStatus = (props) => {
   };
 
   return (
-    <div>
+    <>
+      {' '}
       {!editMode && (
-        <div>
-          <span onClick={activateEditMode}>{userStatus || 'No status'}</span>
-        </div>
+        <span onClick={activateEditMode}>
+          <span
+            className={
+              props.authorizedId === props.params.userId || !props.params.userId
+                ? style.status
+                : null
+            }
+          >
+            {userStatus || 'No status'}
+          </span>
+          <br />
+          {props.authorizedId === props.params.userId ||
+          !props.params.userId ? (
+            <span className={style.description}> Click to change</span>
+          ) : null}
+        </span>
       )}
       {editMode && (
-        <div>
-          <input
-            autoFocus={true}
-            value={userStatus}
-            onChange={onStatusChange}
-            onBlur={deActivateEditMode}
-          />
-        </div>
+        <input
+          autoFocus={true}
+          value={userStatus}
+          onChange={onStatusChange}
+          onBlur={deActivateEditMode}
+        />
       )}
-    </div>
+    </>
   );
 };
 

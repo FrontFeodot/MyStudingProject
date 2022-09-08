@@ -8,6 +8,9 @@ export const instance = axios.create({
   },
 });
 
+export const AUTH_URL =
+  'https://accounts.spotify.com/authorize?client_id=8b756100d504472681b8420be7bacfaa&response_type=code&redirect_uri=http://localhost:3000';
+
 export const usersAPI = {
   getUsers(currentPage = 1, pageSize = 10) {
     return instance
@@ -39,8 +42,17 @@ export const profileAPI = {
   updateStatus(status) {
     return instance.put(`profile/status`, { status });
   },
-  addPhoto(image) {
-    return instance.put(`profile/photo`, image);
+  addPhoto(file) {
+    const formData = new FormData();
+    formData.append('image', file);
+    return instance.put(`profile/photo`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+  },
+  saveProfile(profile) {
+    return instance.put(`profile`, profile);
   },
 };
 export const authAPI = {
@@ -49,9 +61,9 @@ export const authAPI = {
       return response.data;
     });
   },
-  login(email, password, rememberMe = false) {
+  login(email, password, rememberMe = false, captcha = null) {
     return instance
-      .post('auth/login', { email, password, rememberMe })
+      .post('auth/login', { email, password, rememberMe, captcha })
       .then((response) => {
         return response.data;
       });
@@ -60,5 +72,76 @@ export const authAPI = {
     return instance.delete('auth/login').then((response) => {
       return response.data;
     });
+  },
+};
+
+export const securityAPI = {
+  getCaptchaUrl() {
+    return instance.get(`security/get-captcha-url`);
+  },
+};
+
+export const dialogsAPI = {
+  getDialogsWithFriend(userId) {
+    return instance.get(`dialogs/${userId}/messages`);
+  },
+  getAllDialogs() {
+    return instance.get('dialogs');
+  },
+  sendMessage(body, userId) {
+    if (userId) {
+      return instance.post(`dialogs/${userId}/messages`, body);
+    } else {
+      return 'Choose interlocutor';
+    }
+  },
+  startChatting(userId) {
+    return instance.put(`dialogs/${userId}`);
+  },
+};
+
+let subscribers = [];
+
+let socket;
+
+const closeHandler = () => {
+  console.log('Connection to SOCKET failed, try to reconnect');
+  setTimeout(createChannel(), 3000);
+};
+
+const messageHandler = (e) => {
+  const newMessages = JSON.parse(e.data);
+  subscribers.forEach((s) => s(newMessages));
+};
+
+const createChannel = () => {
+  socket?.removeEventListener('close', closeHandler);
+  socket?.removeEventListener('message', messageHandler);
+  socket?.close();
+  socket = new WebSocket(
+    'wss://social-network.samuraijs.com/handlers/ChatHandler.ashx'
+  );
+  socket.addEventListener('close', closeHandler);
+  socket.addEventListener('message', messageHandler);
+};
+
+export const chatAPI = {
+  startChannel() {
+    createChannel();
+  },
+  stopChannel() {
+    subscribers = [];
+    socket?.removeEventListener('close', closeHandler);
+    socket?.removeEventListener('message', messageHandler);
+    socket?.close();
+  },
+  subscribe(callback) {
+    subscribers.push(callback);
+  },
+  unsubscribe(callback) {
+    subscribers = subscribers.filter((s) => s !== callback);
+  },
+  sendMessage(message) {
+    socket?.send(message);
   },
 };

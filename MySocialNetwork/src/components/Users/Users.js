@@ -1,5 +1,7 @@
+import { Button } from 'primereact/button';
 import React from 'react';
 import UsersPaginator from '../common/Paginators/UsersPaginator';
+import style from './users.module.css';
 
 import User from './User';
 
@@ -13,12 +15,6 @@ const Users = ({
 }) => {
   return (
     <div>
-      <UsersPaginator
-        currentPage={currentPage}
-        totalUsersCount={totalUsersCount}
-        pageSize={pageSize}
-        onPageChanged={onPageChanged}
-      />
       {props.users.map((u) => {
         return (
           <User
@@ -27,9 +23,23 @@ const Users = ({
             follow={props.follow}
             unfollow={props.unfollow}
             followingInProgress={props.followingInProgress}
+            isAuth={props.isAuth}
           />
         );
       })}
+      <UsersPaginator
+        currentPage={currentPage}
+        totalUsersCount={totalUsersCount}
+        pageSize={pageSize}
+        onPageChanged={onPageChanged}
+      />
+      <Button
+        className={style.upButton}
+        label='Page up'
+        onClick={(e) => {
+          window.scrollTo(0, 0);
+        }}
+      />
     </div>
   );
 };

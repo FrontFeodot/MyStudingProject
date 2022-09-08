@@ -1,0 +1,38 @@
+.settingsBlock {
+  padding: 10px;
+}
+.option div {
+  padding: 5px;
+}
+
+.inputs input {
+  margin: 3.5px;
+}
+.currentPhoto {
+  padding: 10px;
+}
+.currentPhoto img {
+  width: 100px;
+  height: 100px;
+}
+.currentPhoto input {
+  margin-left: 10px;
+}
+.radioInput {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.aboutMe {
+  width: 20em;
+  height: 10em;
+  overflow: auto;
+  resize: none;
+}
+.error {
+  padding: 10px;
+  color: red;
+}
+.success {
+  padding: 10px;
+  color: green;
+}

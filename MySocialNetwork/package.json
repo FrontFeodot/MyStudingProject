@@ -1,12 +1,14 @@
 {
-  "name": "chernovick",
+  "name": "my-studing-project",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://frontfeodot.github.io/MyStudingProject/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "bootstrap": "^5.2.0",
     "formic": "^0.0.10",
     "formik": "^2.2.9",
     "primeicons": "^5.0.0",
@@ -17,9 +19,11 @@
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-youtube": "^9.0.3",
     "redux": "^4.2.0",
     "redux-form": "^8.3.8",
     "redux-thunk": "^2.4.1",
+    "typeface-roboto": "^1.1.13",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },
@@ -27,7 +31,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

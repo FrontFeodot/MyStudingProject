@@ -6,7 +6,7 @@ import {
   getUserStatus,
   updateUserStatus,
   addPhoto,
-} from '../../redux/profile-Reducer';
+} from '../../redux/profile-reducer';
 import {
   Navigate,
   useLocation,
@@ -15,28 +15,33 @@ import {
 } from 'react-router-dom';
 import { compose } from 'redux';
 import { useEffect } from 'react';
+import Preloader from '../common/Preloader/Preloader';
 
 const ProfileContainer = (props) => {
   let navigateUserId = props.router.params.userId;
   let getProfile = props.getProfile;
   let getUserStatus = props.getUserStatus;
   let authorizedId = props.authorizedId;
+  let userId = navigateUserId;
+  if (!userId) {
+    userId = props.authorizedId;
+  }
   useEffect(() => {
-    let userId = navigateUserId;
-    if (!userId) {
-      userId = authorizedId;
+    if (userId) {
+      getProfile(userId);
+      getUserStatus(userId);
     }
-    getProfile(userId);
-    getUserStatus(userId);
-  }, [navigateUserId, getProfile, getUserStatus, authorizedId]);
+  }, [navigateUserId, getProfile, getUserStatus, authorizedId, userId]);
 
-  if (!props.isAuth) {
-    return <Navigate to={'/Login'} />;
+  if (!userId) {
+    return <Navigate to={'/login'} />;
+  }
+  if (!props.profile) {
+    return <Preloader />;
   }
   return (
     <Profile
       profile={props.profile}
-      dataAvailability={props.dataAvailability}
       userStatus={props.userStatus}
       updateUserStatus={props.updateUserStatus}
       authorizedId={props.authorizedId}
@@ -46,28 +51,12 @@ const ProfileContainer = (props) => {
   );
 };
 
-let dataAvailability = (data) => {
-  if (typeof data === 'string') {
-    return <span>{data}</span>;
-  } else if (typeof data === 'object') {
-    for (let key in data) {
-      if (data[key] !== false)
-        return (
-          <span>
-            {key} : {data[key]}
-          </span>
-        );
-    }
-  } else {
-    return <span>Информация отсутсвует</span>;
-  }
-};
-
 let mapStateToProps = (state) => ({
   profile: state.profilePage.profile,
   userStatus: state.profilePage.userStatus,
   authorizedId: state.auth.userId,
   isAuth: state.auth.isAuth,
+  isLogin: state.auth.isLogin,
 });
 
 function withRouter(Component) {
@@ -84,7 +73,6 @@ function withRouter(Component) {
 export default compose(
   withRouter,
   connect(mapStateToProps, {
-    dataAvailability,
     getProfile,
     getUserStatus,
     updateUserStatus,
