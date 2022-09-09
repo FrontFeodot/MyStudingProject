@@ -1,11 +1,10 @@
 {
   "files": {
     "main.css": "/MyStudingProject/static/css/main.51280f95.css",
-    "main.js": "/MyStudingProject/static/js/main.947965de.js",
-    "static/js/797.74984449.chunk.js": "/MyStudingProject/static/js/797.74984449.chunk.js",
+    "main.js": "/MyStudingProject/static/js/main.122028cd.js",
+    "static/js/313.3d38345f.chunk.js": "/MyStudingProject/static/js/313.3d38345f.chunk.js",
     "static/css/414.69b09dac.chunk.css": "/MyStudingProject/static/css/414.69b09dac.chunk.css",
-    "static/js/414.42ff4a41.chunk.js": "/MyStudingProject/static/js/414.42ff4a41.chunk.js",
-    "static/js/231.e8d2ccee.chunk.js": "/MyStudingProject/static/js/231.e8d2ccee.chunk.js",
+    "static/js/414.66240f30.chunk.js": "/MyStudingProject/static/js/414.66240f30.chunk.js",
     "static/media/primeicons.svg": "/MyStudingProject/static/media/primeicons.c6e2053303524e39530c.svg",
     "static/media/primeicons.eot": "/MyStudingProject/static/media/primeicons.7fc4d8e224d1ff1b9c62.eot",
     "static/media/primeicons.woff": "/MyStudingProject/static/media/primeicons.449aa8c65cdc5c2a8686.woff",
@@ -38,14 +37,13 @@
     "static/media/preloader.svg": "/MyStudingProject/static/media/preloader.3778619a29b96e43e4b358be1283bab0.svg",
     "index.html": "/MyStudingProject/index.html",
     "main.51280f95.css.map": "/MyStudingProject/static/css/main.51280f95.css.map",
-    "main.947965de.js.map": "/MyStudingProject/static/js/main.947965de.js.map",
-    "797.74984449.chunk.js.map": "/MyStudingProject/static/js/797.74984449.chunk.js.map",
+    "main.122028cd.js.map": "/MyStudingProject/static/js/main.122028cd.js.map",
+    "313.3d38345f.chunk.js.map": "/MyStudingProject/static/js/313.3d38345f.chunk.js.map",
     "414.69b09dac.chunk.css.map": "/MyStudingProject/static/css/414.69b09dac.chunk.css.map",
-    "414.42ff4a41.chunk.js.map": "/MyStudingProject/static/js/414.42ff4a41.chunk.js.map",
-    "231.e8d2ccee.chunk.js.map": "/MyStudingProject/static/js/231.e8d2ccee.chunk.js.map"
+    "414.66240f30.chunk.js.map": "/MyStudingProject/static/js/414.66240f30.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.51280f95.css",
-    "static/js/main.947965de.js"
+    "static/js/main.122028cd.js"
   ]
 }
