@@ -9,6 +9,7 @@ import {
   toggleIsFetching,
   toggleFollowingProgress,
   requestUsers,
+  searchUsers,
 } from '../../redux/users-reducer';
 import Users from './Users';
 
@@ -51,6 +52,7 @@ const UsersContainer = ({ currentPage, pageSize, getUsers, ...props }) => {
         unfollow={props.unfollow}
         followingInProgress={props.followingInProgress}
         isAuth={props.isAuth}
+        searchUsers={props.searchUsers}
       />
     </>
   );
@@ -77,6 +79,7 @@ export default connect(mapStateToProps, {
   toggleIsFetching,
   toggleFollowingProgress,
   getUsers: requestUsers,
+  searchUsers,
 })(UsersContainer);
 
 /* class UsersContainer extends React.Component {

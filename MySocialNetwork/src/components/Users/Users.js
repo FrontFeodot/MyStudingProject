@@ -4,6 +4,7 @@ import UsersPaginator from '../common/Paginators/UsersPaginator';
 import style from './users.module.css';
 
 import User from './User';
+import UserSearcher from './UserSearcher';
 
 const Users = ({
   currentPage,
@@ -15,6 +16,11 @@ const Users = ({
 }) => {
   return (
     <div>
+      <UserSearcher
+        searchUsers={props.searchUsers}
+        pageSize={pageSize}
+        currentPage={currentPage}
+      />
       {props.users.map((u) => {
         return (
           <User
