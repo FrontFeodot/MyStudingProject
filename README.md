@@ -1,7 +1,7 @@
 # MyStudingProject
 This is my project, what I make to learn React JS.
 
-Check the project with github pages. If website is not working, please use VPN.
+Check the project with github pages: https://frontfeodot.github.io/MyStudingProject/. If website is not working, please use VPN.
 
 You can use test account to check my project:
 
