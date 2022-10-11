@@ -10,3 +10,5 @@ You can use test account to check my project:
   Password: free
 
 If you want to check the code, please change branches to 'master'.
+
+!WARNING! Technical work is underway on the server, the site will be available on 12.10
